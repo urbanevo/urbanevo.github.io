@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>URBANEVO</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			    <section>
+				<h3>URBANEVO: ottimizzazione dei segnali semaforici tramite algoritmi di AI</h3>
+			    </section>
+			    <section>
+				<h3>Algoritmo</h3>
+				<ul>
+				    <li>L'algoritmo di URBANEVO combina
+					tecniche di clustering, machine learning regularization e algoritmi genetici per individuare
+					e ottimizzare i differenti flussi di traffico.</li>
+				    <li>Lo scopo dell'algoritmo è quello di ottimizzare gli schemi dei segnali semaforici per diminuire:</li>
+				    <ul>
+					<li>tempi di percorrenza</li>
+					<li>emissioni inquinanti dei veicoli</li>
+				    </ul>
+				</ul>
+			    </section>
+			    <section>
+				<h3>Testing</h3>
+				<ul>
+				    <li>L'algoritmo è stato testato tramite il simulatore di traffico SUMO con dati del traffico reali del quartiere di Bologna via Pasubio.</li>
+				</ul>
+				<img height="400" data-src="pasubio-scenario.png" alt="Down arrow">
+			    </section>
+			    <section>
+				<h3>Risultati</h3>
+				<table>
+				    <thead>
+					<tr>
+					    <th>Metrica</th>
+					    <th>Originale</th>
+					    <th>Ottimizzato</th>
+					    <th>Miglioramento</th>
+					</tr>
+				    </thead>
+				    <tbody>
+					<tr>
+					    <td>Durata</td>
+					    <td>574.4 s</td>
+					    <td>444.87 s</td>
+					    <td>-22.55%</td>
+					</tr>
+					<tr>
+					    <td>Attesa</td>
+					    <td>377.41 s</td>
+					    <td>258.92 s</td>
+					    <td>-31.4%</td>
+					</tr>
+					<tr>
+					    <td>Fermate</td>
+					    <td>8.19 n</td>
+					    <td>5.88 n</td>
+					    <td>-28.21%</td>
+					</tr>
+					<tr>
+					    <td>Arrivati</td>
+					    <td>5792 n</td>
+					    <td>7648 n</td>
+					    <td>32.04%</td>
+					</tr>
+				    </tbody>
+				</table>
+				<p>s = secondi | n = numero</p>
+				<p>Arrivati: si riferisce al numero di veicoli arrivati a destinazione durante la simulazione.</p>
+			    </section>
+			    <section>
+				<h3>Budget</h3>
+				<p>I costi per realizzare URBANEVO su uno scenario reale di 8 incroci semaforici, simile a quello di Bologna via Pasubio, sono di 20.000 euro:</p>
+				<ul>
+				    <li>Server: 1000 euro per la potenza di calcolo necessaria.</li>
+				    <li>Sensori: 17.000 per telecamere Wisenet XNO-6120RD/TD che raccolgono dati sul traffico.</li>
+				    <li>Installazione sensori: 2000 euro.</li>
+				</ul>
+			    </section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/highlight/highlight.js' },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
