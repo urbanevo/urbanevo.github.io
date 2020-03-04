@@ -44,12 +44,12 @@
 			    <section>
 				<h3>Testing</h3>
 				<ul>
-				    <li>L'algoritmo è stato testato tramite il simulatore di traffico SUMO con dati del traffico reali del quartiere di Bologna via Pasubio.</li>
+				    <li>L'algoritmo è stato testato tramite il simulatore di traffico SUMO sui dati del traffico reale, del quartiere di Bologna via Pasubio, durante le ore di traffico intenso mattutino.</li>
 				</ul>
 				<img height="400" data-src="pasubio-scenario.png" alt="Down arrow">
 			    </section>
 			    <section>
-				<h3>Risultati</h3>
+				<h3>Risultati - Tempi di percorrenza</h3>
 				<table>
 				    <thead>
 					<tr>
@@ -61,42 +61,163 @@
 				    </thead>
 				    <tbody>
 					<tr>
-					    <td>Durata</td>
-					    <td>574.4 s</td>
-					    <td>444.87 s</td>
-					    <td>-22.55%</td>
+					    <td style="width: 4.11em; min-width: 4.11em;">Durata (s)</td>
+					    <td>907.85</td>
+					    <td>573.08</td>
+					    <td>-36.87%</td>
 					</tr>
 					<tr>
-					    <td>Attesa</td>
-					    <td>377.41 s</td>
-					    <td>258.92 s</td>
-					    <td>-31.4%</td>
+					    <td>Attesa (s)</td>
+					    <td>647.71</td>
+					    <td>368.01</td>
+					    <td>-43.18%</td>
 					</tr>
 					<tr>
 					    <td>Fermate</td>
-					    <td>8.19 n</td>
-					    <td>5.88 n</td>
-					    <td>-28.21%</td>
+					    <td>12.38</td>
+					    <td>7.24</td>
+					    <td>-41.50%</td>
 					</tr>
 					<tr>
 					    <td>Arrivati</td>
-					    <td>5792 n</td>
-					    <td>7648 n</td>
-					    <td>32.04%</td>
+					    <td>7252</td>
+					    <td>8556</td>
+					    <td>17.98%</td>
 					</tr>
 				    </tbody>
 				</table>
-				<p>s = secondi | n = numero</p>
 				<p>Arrivati: si riferisce al numero di veicoli arrivati a destinazione durante la simulazione.</p>
 			    </section>
+			    
 			    <section>
-				<h3>Budget</h3>
-				<p>I costi per realizzare URBANEVO su uno scenario reale di 8 incroci semaforici, simile a quello di Bologna via Pasubio, sono di 20.000 euro:</p>
+				<h3>Risultati - Emissioni</h3>
+				<table>
+				    <thead>
+					<tr>
+					    <th>Metrica</th>
+					    <th>Originale</th>
+					    <th style="width: 4.41em; min-width: 4.41em; max-width: 4.41em;">Ottimizzato</th>
+					    <th>Miglioramento</th>
+					</tr>
+				    </thead>
+				    <tbody>
+					<tr>
+					    <td>CO (mg)</td>
+					    <td>6831.68</td>
+					    <td>5153.55</td>
+					    <td>-24.56%</td>
+					</tr>
+					<tr>
+					    <td>CO2 (mg)</td>
+					    <td>692650.37</td>
+					    <td>541404.16</td>
+					    <td>-21.83%</td>
+					</tr>
+					<tr>
+					    <td>HC (mg)</td>
+					    <td>336.60</td>
+					    <td>237.04</td>
+					    <td>-29.57%</td>
+					</tr>
+					<tr>
+					    <td>PMx (mg)</td>
+					    <td>51.99</td>
+					    <td>45.28</td>
+					    <td>-12.89%</td>
+					</tr>
+					<tr>
+					    <td>NOx (mg)</td>
+					    <td>1605.10</td>
+					    <td>1386.12</td>
+					    <td>-13.64%</td>
+					</tr>
+					<tr>
+					    <td>Carburante (ml)</td>
+					    <td>276.14</td>
+					    <td>215.84</td>
+					    <td>-21.83%</td>
+					</tr>
+				    </tbody>
+				</table>
+			    </section>
+
+			    <section>
+				<h3>Realizzazione di Urbanevo</h3>
+				<p align="left">I costi per realizzare URBANEVO su uno scenario reale di 8 incroci semaforici, simile a quello di Bologna via Pasubio, variano in base alla disponibilità e alla qualità dei dati sul traffico già presenti. </p>
+			    </section>
+
+			    <section>
+				<h3>Scenario 1 - Budget</h3>
+				<p align="left">Descrizione: né dati sul traffico né sensori per raccolta informazioni.</p>
+				<p align="left">Costi totali di 27.000 euro, suddivisi in:</p>
 				<ul>
 				    <li>Server: 1000 euro per la potenza di calcolo necessaria.</li>
 				    <li>Sensori: 17.000 per telecamere Wisenet XNO-6120RD/TD che raccolgono dati sul traffico.</li>
 				    <li>Installazione sensori: 2000 euro.</li>
+				    <li>Personale: 4000 euro per aggregazione dati.</li>
+				    <li>Costi accessori: 3000 euro.</li>
 				</ul>
+			    </section>
+
+			    <section>
+				<h3>Scenario 1 - Tempistiche</h3>
+				<p align="left">Si prevede una durata complessiva di 3 mesi. Suddivisi in:</p>
+				<ul>
+				    <li>Primo mese: raccolta dati.</li>
+				    <li>Secondo mese: aggregazione dati e creazione ambiente di simulazione.</li>
+				    <li>Terzo mese: ottimizzazione algoritmica dei segnali semaforici.</li>
+				</ul>
+			    </section>
+
+			    <section>
+				<h3>Scenario 2 - Budget</h3>
+				<p align="left">Descrizione: disponibilità completa di dati sul traffico e sensori per raccolta informazioni.</p>
+				<p align="left">Costi totali di 6000 euro, suddivisi in:</p>
+				<ul>
+				    <li>Server: 1000 euro per la potenza di calcolo necessaria.</li>
+				    <li>Personale: 4000 euro per aggregazione dati.</li>
+				    <li>Costi accessori: 1000 euro.</li>
+				</ul>
+			    </section>
+
+			    <section>
+
+				<section>
+				    <h3>Scenario 2 - Tempistiche</h3>
+				    <p align="left">Si prevede una durata complessiva di 2 mesi:</p>
+				    <ul>
+					<li>Primo mese: aggregazione dati e creazione ambiente di simulazione.</li>
+					<li>Secondo mese: ottimizzazione algoritmica dei segnali semaforici.</li>
+				    </ul>
+				</section>
+
+				<section>
+				    <h3>Scenario ibrido - Budget</h3>
+				    <p align="left">Descrizione: disponibilità di alcuni dati sul traffico e sensori per raccolta informazioni.</p>
+				    <p align="left">Costi totali di 17.500 euro, suddivisi in:</p>
+				    <ul>
+					<li>Server: 1000 euro per la potenza di calcolo necessaria.</li>
+					<li>Sensori: 8500 per telecamere Wisenet XNO-6120RD/TD che raccolgono dati sul traffico.</li>
+					<li>Installazione sensori: 1000 euro.</li>
+					<li>Personale: 4000 euro per aggregazione dati.</li>
+					<li>Costi accessori: 3000 euro.</li>
+				    </ul>
+				</section>
+
+				<section>
+				    <h3>Scenario ibrido - Tempistiche</h3>
+				    <p align="left">Si prevede una durata complessiva di 3 mesi in quanto la presenza dei dati è incompleta:</p>
+				    <ul>
+					<li>Primo mese: raccolta dati mancanti.</li>
+					<li>Secondo mese: aggregazione dati e creazione ambiente di simulazione.</li>
+					<li>Terzo mese: ottimizzazione algoritmica dei segnali semaforici.</li>
+				    </ul>
+				</section>
+				
+			    </section>
+
+			    <section>
+				<h3>Conclusioni</h3>
 			    </section>
 			</div>
 		</div>
